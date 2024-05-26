@@ -5,48 +5,63 @@
     # Request for reservoir dimensions and discretization parameters
 
 # Lx
-pass
+Lx= float(input('what is the length of the block'))
 # Ly
-pass
+Ly= float(input('what is the length of the block'))
 # Lz
-pass
+Lz= float(input('what is the length of the block'))
 # nx
-pass
+nx= int(input('how many blocks are there on the x-axis'))
 # ny
-pass
+ny= int(input('how many blocks are there on the y-axis'))
 # nz
-pass
+nz= int(input('how many blocks are there on the z-axis'))
 
 
 #################### Task 2 ############################
     # Request for the cut-off value
 # cut_off
-pass
+cut_off= float(input('what is the cutoff value'))
 
 #################### Task 3 ############################
     # Initialize counters
 
 # n_active
-pass
+n_active=0
 # n_inactive
-pass
+n_inactive=0
 
 #################### Task 4 ############################
     # Loop through all blocks (nested loop)
 for k in range(1, nz+1):
     # Initialize layer counter
-    pass
+    layer_active_count = 0
     # two nested loops go here
-    pass
+      for j in range(1,nj+1):
+        for i in range(1,nx+1):
+          perm = float(input(f'Enter permeability value for block ({i}, {j}, {k}): '))
+   
+            if perm_list< cut_off:
+                n_active= n_active+ 1
+            
+            else:
+                n_inactive= n_inactive + 1
+                 layer_active= layer_active + 1
+            
 
     # Print layer count
-    pass
+    print(f'Number of active gridblocks in layer {k}: {layer_active_count}')
+
 
 #################### Task 5 ############################
     # Print overall counts
+total_blocks = n_active + n_inactive
+percentage_active = (n_active / total_blocks) * 100
+print(percentage_active)
 
 # Print 'active'
-pass
+print(f'Total number of active gridblocks: {n_active}')
 
 # Print 'inactive'
-pass
+print(f'Total number of inactive gridblocks: {n_inactive}')
+
